@@ -4,9 +4,9 @@ int f=-1,r=-1,c=0,n=0;
 void Enqueue()
 {
 	int val;
-	printf("\nEnter the value to be added in the queue:\n);
+	printf("\nEnter the value to be added in the queue:\n");
 	scanf("%d",&val);
-	if(r=n-1)
+	if(r==n-1)
 		printf("\nOverflow\n");
 	else
 	{
@@ -42,10 +42,10 @@ void display()
 }
 int main()
 {
-	printf("\nEnter the size of the queue:\n);
+	printf("\nEnter the size of the queue:\n");
 	scanf("%d",&n);
-	printf("\nEnter your choice:\n);
-	while(c==4)
+	printf("\nEnter your choice:\n");
+	while(c!=4)
 	{
 		printf("1.Enqueue\n");
 		printf("2.Dqueue\n");
@@ -66,12 +66,12 @@ int main()
 			}
 			case 3:
 			{
-				dispaly()
+				display();
 				break;
 			}
-			default():
+			default:
 			{
-				printf("\nInvalid choice\n);
+				printf("\nInvalid choice\n");
 				break;
 			}
 			
