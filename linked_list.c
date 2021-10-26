@@ -43,20 +43,29 @@ void insertend(int value)
 void insertmid(int value,int n)
 {
 	node *temp;
-	temp=(node*)malloc(sizeof(node)*n);
+	temp=(node*)malloc(sizeof(node));
 	temp->info=value;
 	temp->next=NULL;
 		if(head==NULL)
 			head=temp;
 		else
-		{
-			node *mid=head;
-			while(mid->next!=NULL)
-				mid=mid->next;
-			mid->next=temp;
-			mid=temp;
-		}
+		{            
+            node *mid=head;   
+            for(int i=0;i<n;i++)  
+            {  
+                mid = mid->next;  
+                if(temp == NULL)  
+                {  
+                    printf("\ncan't insert\n");  
+                    return;  
+                }  
+              
+            }  
+            temp ->next = mid ->next;   
+            mid ->next = temp;    
+        }  
 }
+
 void display()
 {
 	node *temp=head;
@@ -112,3 +121,4 @@ int main()
 	}
 	return 0;
 }
+
