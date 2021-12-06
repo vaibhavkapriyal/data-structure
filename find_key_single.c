@@ -39,28 +39,32 @@ void display()
 
 void deletenode(int key)
 {
-     node *prev, *cur;
-    while (head != NULL && head->info == key)
+     node *prev, *cur=head;
+    while ( cur->info != key)
     {
-        prev = head;
-        head = head->next;
-        free(prev);
-        return;
-    }
-    prev = NULL;
-    cur  = head;
-    while (cur != NULL)
-    {
-        if (cur->info == key)
+        if(cur->next==NULL)
         {
-            if (prev != NULL)
-                prev->next = cur->next;
-            free(cur);
-            return;
+            printf("\nKey not Found\n");
+            break;
         }
         prev = cur;
         cur = cur->next;
     }
+    if(cur==head)
+    {
+        head=cur->next;
+        cur->next=NULL;
+    }
+    else if(cur->next==NULL)
+    {
+        prev->next=NULL;
+    }
+    else
+    {
+        prev->next=cur->next;
+        cur->next=NULL;
+    }
+    free(cur);
 }
 int main()
 {
