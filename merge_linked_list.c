@@ -46,7 +46,7 @@ void sort(node **head)
 		node *temp2=*head;
 		while(temp2!=NULL)
 		{
-			if(temp1->info>temp2->info)
+			if(temp1->info<temp2->info)
 			{
 				t=temp1->info;
 				temp1->info=temp2->info;
@@ -112,8 +112,11 @@ int main()
 	}
 	sort(&head1);
 	sort(&head2);
+	printf("\nSorted list 1:\n");
 	display(&head1);
+	printf("\nSorted list 2:\n");
 	display(&head2);
+	printf("\nMerged list:\n");
 	merge(&head1,&head2);
 	display(&head1);
 	
