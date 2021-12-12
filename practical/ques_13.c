@@ -27,8 +27,6 @@ void insert(node**head,node **tail,int value)
 	}
 }
 
-
-
 void display(node **head)
 {
 	node *temp=*head;
