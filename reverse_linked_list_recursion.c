@@ -57,13 +57,41 @@ node* reverse(node *head)
 int main()
 {
 	node *head=NULL;
-	insert(&head,20);
-	insert(&head,30);
-	insert(&head,40);
-	insert(&head,50);
-	insert(&head,60);
-	insert(&head,70);
-	display(head);
-	reverse(head);
-	return 0;	
+	int c=0,n,value;
+	printf("1. Insert at front\n");
+	printf("2. Display\n");
+	printf("3. Reverse Display\n");
+	printf("4. Exit\n");
+	while(c!=4)
+	{
+		printf("Enter your choice\n");
+		scanf("%d",&c);
+		switch(c)
+		{
+			case 1:
+			{
+				printf("Enter a value to be inserted\n");
+				scanf("%d",&value);
+				insert(&head,value);
+				break;
+			}
+			case 2:
+			{
+				display(head);
+				break;
+			}
+			case 3:
+			{	
+				reverse(head);
+				printf("\n");
+				break;
+			}
+			default:
+			{
+				printf("Invalid Choice\n");
+				break;
+			}
+		}
+	}
+	return 0;
 }
